@@ -7,3 +7,7 @@ function navOpen(){
     }
   
   }
+  function login(){
+    // let login = document.querySelector('login.html')
+    alert('nono')
+  }

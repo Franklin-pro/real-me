@@ -598,3 +598,81 @@ border-radius: 1rem;
 }
 
   }
+
+  /* -----------------login------------------------- */
+  .login-container{
+    background-color: #04133159;
+    padding: 2rem;
+
+    /* height: 100vh; */
+   
+}
+.login-form{
+    background-color: #041331d3;
+    width: 40%;
+   margin-top: 5rem;
+ border-radius: 2rem;
+   display: flex;
+   justify-content: center;
+}
+label{
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+.dd{
+    color: #eee;
+    margin-top: 4rem;
+}
+.de{
+    color: white;
+    justify-content: center;
+    display: none;
+}
+.logins{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    padding: 2rem;
+}
+.register{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+.register input{
+    width: 100%;
+    color: white;
+}
+
+.loginse h1{
+    color: #eee;
+    padding: 1rem;
+}
+
+.btn{
+    padding: 1rem 4rem;
+    display: flex;
+    background-color: rgb(64, 145, 64);
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+    color: #eeee;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover{
+    opacity: 0.5;
+    color: white;
+}
+.logins input{
+    width: 100%;
+    color: white; 
+    padding: 1rem 1rem;
+}
