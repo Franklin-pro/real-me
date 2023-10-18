@@ -29,8 +29,11 @@ z-index: 999;
     font-size: 1.6rem;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
-    color: #ddd;
+    color: rgb(84, 168, 168);
 
+}
+.name{
+  color: rgb(71, 129, 129);;
 }
 .links{
     display: flex;
@@ -89,6 +92,7 @@ z-index: 999;
     color: #ddd;
     border-radius: .4rem;
     transition: all .3s;
+    cursor: pointer;
 }
 .paragraph{
     font-size: 1.3rem;
@@ -169,6 +173,7 @@ z-index: 999;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     padding: 1rem;
+    color: rgb(84, 168, 168);
   }
   .para{
   
@@ -194,6 +199,9 @@ z-index: 999;
  color: orange;
 
   }
+.ye{
+  color: black;
+}
 
 
   .hire:hover{
@@ -207,6 +215,7 @@ z-index: 999;
     font-family: 'Poppins', sans-serif;
     padding: 1rem;
     text-align: center;
+    color: rgb(84, 168, 168);
   }
   .card i{
 display: flex;
@@ -249,20 +258,20 @@ justify-content: center;
   .container{
     width: 100%;
     background-color: #ddd;
-    border-radius: 5rem;
+    /* border-radius: 5rem; */
   }
   .html{
     width: 90%;
     background-image: linear-gradient(to right, red,orange,green);
     font-size: 2rem;
-    border-radius: 5rem;
+    /* border-radius: 5rem; */
     animation: html 3s;
   }
   .css{
     width: 80%;
     font-size: 2rem;
     background-image: linear-gradient(to right, red,orange,rgba(0, 128, 0, 0.726));
-    border-radius: 5rem;
+    /* border-radius: 5rem; */
     animation: css 3s;
   }
   .js{
@@ -270,14 +279,14 @@ justify-content: center;
     background-image: linear-gradient(to right, red,orange,rgba(0, 128, 0, 0.247));
     font-size: 2rem;
     animation: js 3s;
-    border-radius: 5rem;
+    /* border-radius: 5rem; */
   }
   .php{
     width: 40%;
     background-image: linear-gradient(to right, red,orange);
     font-size: 2rem;
     animation: php 3s;
-    border-radius: 5rem;
+    /* border-radius: 5rem; */
   }
 
   @keyframes html{
@@ -599,80 +608,60 @@ border-radius: 1rem;
 
   }
 
-  /* -----------------login------------------------- */
-  .login-container{
-    background-color: #04133159;
-    padding: 2rem;
+  /* ----------------------sign-up form------------------------- */
 
-    /* height: 100vh; */
-   
+.signlog{
+  background: #c4c2c2;
+  display: flex;
+  flex-direction: column;
+width: 50%;
+top: 3rem;
+justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+
 }
-.login-form{
-    background-color: #041331d3;
-    width: 40%;
-   margin-top: 5rem;
- border-radius: 2rem;
-   display: flex;
-   justify-content: center;
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+}
+.form input{
+padding: .6rem;
+border-radius: .3rem;
+border: none;
+}
+#submit{
+  display: inline-block;
+  align-items: center;
+  /* width: 50%; */
+  margin: 25px;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 1rem;
+  color: #ddd;
+  border: none;
+  border-radius: .3rem;
+  background-color: #222;
+  cursor: pointer;
+}
+.pass{
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+.pass input{
+  width: 100%;
+}
+.yee {
+  position: absolute;
+left: 90%;
+top: 25%;
 }
 label{
-    color: whitesmoke;
-    font-size: 1.5rem;
-}
-.dd{
-    color: #eee;
-    margin-top: 4rem;
-}
-.de{
-    color: white;
-    justify-content: center;
-    display: none;
-}
-.logins{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-
-    padding: 2rem;
-}
-.register{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
-}
-.register input{
-    width: 100%;
-    color: white;
+  width: 50%;
 }
 
-.loginse h1{
-    color: #eee;
-    padding: 1rem;
-}
-
-.btn{
-    padding: 1rem 4rem;
-    display: flex;
-    background-color: rgb(64, 145, 64);
-    border: none;
-    border-radius: 0.4rem;
-    font-size: 1.4rem;
-    color: #eeee;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.btn:hover{
-    opacity: 0.5;
-    color: white;
-}
-.logins input{
-    width: 100%;
-    color: white; 
-    padding: 1rem 1rem;
-}
