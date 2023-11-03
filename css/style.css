@@ -665,3 +665,48 @@ label{
   width: 50%;
 }
 
+/* --------------login hh----------- */
+.signlog{
+  width: 70rem;
+  background-color: #eeeeee;
+  padding: 3rem;
+align-items: center;
+margin: 10rem auto;
+display: flex;
+gap: 1rem;
+
+flex-direction: column;
+
+ 
+}
+.grp{
+  display: flex;
+
+  width: 100%;
+}
+.grp input,label{
+  width: 50%;
+  padding: .8rem ;
+  font-size: 2rem;
+
+}
+.grp button[type=submit]{
+  display: inline-block;
+width: 100%;
+font-size: 1.4rem;
+background: rgb(61, 156, 187);
+border: none;
+padding: 1rem;
+color: #fff;
+}
+.icon-position{
+  position: relative;
+}
+.icon-position i{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0%,-50%);
+  padding: 1rem;
+  font-size: 1.5rem;
+}

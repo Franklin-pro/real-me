@@ -1,48 +1,50 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-Up-Form</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Sign-Up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <center>
-    <form action="#" method="post" class="signlog signup">
-        <h1 class="head">Sign-Up</h1>
-        <div class="form">
-            <div class="pass">
-        <label for="firstName">firstName:</label>
-        <input type="text" name="firstName" placeholder="firstName" id="firstName">
-    </div>
-    <div class="pass">
-        <label for="lastName">lastName:</label>
-        <input type="text" name="lastName" placeholder="lastName" id="lastName">
-    </div>
-    <div class="pass">
-        <label for="email">email:</label>
-        <input type="email" name="email" placeholder="email" id="email">
-    </div>
-        <div class="pass">
-        <label for="password">password:</label>
-        <input type="password" name="password" placeholder="password" id="password">
-        <span class="togglePassword">
-        <i class="fa-regular fa-eye-slash yee"></i>
-    </span>
-    </div>
-    <div class="pass">
-        <label for="Confirmpassword">confPassword:</label>
-        <input type="password" name="confirmpassword" placeholder="confirmPassword" id="confirmpassword">
-        <i class="fa-regular fa-eye-slash yee"></i>
+
+    <form action="" method="post" class="signlog sign-up">
+        <h5 class="her"></h5>
+        <div class="grp">
+           
+            <label for="firstName">firstName:</label>
+            <input type="text" name="firstName" id="firstName">
         </div>
-        <button type="submit" id="submit">Sign-Up</button>
-        <p>already you have an account here <a href="login.html">login</a></p>
+        <div class="grp">
+            <label for="lastName">lastName:</label>
+            <input type="text" name="lastName" id="lastName">
+        </div>
+        <div class="grp">
+            <label for="email">email:</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="grp icon-position">
+            <label for="password">password:</label>
+            <input type="password" name="password" id="password">
+        <span class="togglePassword">
+            <i class="fa-solid fa-eye-slash"></i> 
+        </span>
+      
+        </div>
+        <div class="grp icon-position">
+            <label for="confirmPassword">confirmPassword:</label>
+        
+            <input type="password" name="confirmPassword" id="confirmPassword">
+            <i class="fa-solid fa-eye-slash"></i>
+        </div>
+        <div class="grp">
+    <button type="submit">sign-up</button>
         </div>
     </form>
-
-</center>
-<script src="./javascript/javascript.js"></script>
+ <script src="./javascript/javascript.js"></script>
 <script src="./javascript/signup.js"></script>
-</body>
-</html>

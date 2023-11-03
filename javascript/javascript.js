@@ -7,31 +7,35 @@ function navOpen(){
     }
   
   }
-  function login(){
-    // let login = document.querySelector('login.html')
-    alert('nono')
-  }
-  function reg(){
-  const reg = document.querySelector('').style.display="none";
-  if(reg){
-    alert('are u sure')
-  }else{
+  // function login(){
+  //   // let login = document.querySelector('login.html')
+  //   alert('nono')
+  // }
+  // function reg(){
+  // const reg = document.querySelector('').style.display="none";
+  // if(reg){
+  //   alert('are u sure')
+  // }else{
     
-  }
+  // }
 
-  }
+  // }
 
 
-  let passwordIn = document.querySelector('#password')
-  let togglePassword = document.querySelector('.togglePassword')
-
-  sign.addEventListener("click",()=>{
-    if(passwordIn.type === "password"){
-passwordIn.type ="text";
-togglePassword.innerHTML = `<i class="fa-regular fa-eye yee"></i>`;
-    }
-    else{
+  const passwordIn = document.querySelector("#password");
+  const passwordeye = document.querySelector(".togglePassword");
+  passwordeye.addEventListener("click", () => {
+    if (passwordIn.type === "password") {
+      passwordIn.type = "text";
+      passwordeye.innerHTML = `<i class="fa-solid fa-eye"></i>`;
+    } else {
       passwordIn.type = "password";
-      togglePassword.innerHTML = `<i class="fa-regular fa-eye-slash yee"></i>`;
+      passwordeye.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`;
     }
-  })
+  });
+  
+  
+  
+  react 
+  
+  sudo npx create-react-app name of project
