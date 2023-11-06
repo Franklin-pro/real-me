@@ -36,6 +36,4 @@ function navOpen(){
   
   
   
-  react 
-  
-  sudo npx create-react-app name of project
+ 

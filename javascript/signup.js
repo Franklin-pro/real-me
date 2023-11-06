@@ -19,7 +19,7 @@ const data = {
 }
 
 
-const api = `https://dull-erin-tuna-cap.cyclic.app/api/v1/user`
+const api = `https://zealous-wasp-sun-hat.cyclic.app/api/v1/user`
 const setPostman = {
     method:"POST",
 

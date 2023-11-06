@@ -12,7 +12,7 @@ signlog.addEventListener("submit", (e)=>{
         password
     }
 
-    const api = `https://dull-erin-tuna-cap.cyclic.app/api/v1/user/login`
+    const api = `https://zealous-wasp-sun-hat.cyclic.app/api/v1/user/login`
 
     const setPostman = {
         method:'POST',
