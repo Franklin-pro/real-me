@@ -8,6 +8,7 @@ let  lastName = document.querySelector('#lastName').value;
 let email = document.querySelector('#email').value;
 let password = document.querySelector('#password').value;
 let  confirmPassword = document.querySelector('#confirmPassword').value;
+let message = document.querySelector('.message')
 
 const data = {
     firstName,
@@ -35,8 +36,8 @@ fetch(api,setPostman)
 })
 
 .then((data)=>{
-    // console.log(data.message)
-    signup .innerHTML =`
+  
+    message .innerHTML =`
     <h5 class = "her">${data.message}</h5>
  `
 })

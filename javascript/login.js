@@ -1,5 +1,5 @@
 const signlog = document.querySelector('.signlog')
-
+let nuse = document.querySelector('.message')
 
 signlog.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -36,6 +36,11 @@ signlog.addEventListener("submit", (e)=>{
            }else{
             window.location.href ="./index.html"
            }
+        }else{
+            nuse.innerHTML = `
+            <h5 class="message">${data.message}</h5>
+            `
+            // alert(data.message)
         }
         
         // localStorage.getItem("token",token)

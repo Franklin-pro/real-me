@@ -659,7 +659,7 @@ border: none;
 .yee {
   position: absolute;
 left: 90%;
-top: 25%;
+top: 50%;
 }
 label{
   width: 50%;
@@ -712,6 +712,10 @@ color: #fff;
 }
 .parlog{
   font-size: 2rem;
+}
+.message{
+  color: rgba(226, 26, 26, 0.747);
+  font-size: 1.5rem;
 }
 
 /* -----------------login signup responsive---------------- */
