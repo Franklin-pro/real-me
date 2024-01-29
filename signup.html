@@ -1,51 +1,56 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-Up</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+    <title>signup</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="javascript/javascript.js"></script>
 </head>
 <body>
+    <div class="sign-container">
+        <div class="signloup">
+            <div class="textz">
+                <div class="choose">
+                    <button onclick="login()" id="act">LOGIN</button>
+                    <button onclick="signup()" id="ac">SIGN-UP</button>
+                </div>
+                <div class="signup">
+                   
+                    <form action="#" id="signup">
+                        <h1>SIGN-UP</h1>
+                        <label for="firstName">FirstName:</label>
+                        <input type="text" name="firstName" class="put" placeholder="FirstName">
+                        <label for="firstName">LastName:</label>
+                        <input type="text" name="firstName" class="put" placeholder="LastName">
+                        <label for="firstName">Email:</label>
+                        <input type="text" name="firstName" class="put" placeholder="Email">
+                        <label for="firstName">PassWord:</label>
+                        <input type="text" name="firstName" class="put" placeholder="PassWord">
+                        <div class="btne">
+                          <button type="submit" class="der">SIGN-UP</button>
+                        </div>
+                    </form>
+                    <form action="#" id="login">
+                        <h1>LOGIN</h1>
+                        <label for="firstName">Email:</label>
+                        <input type="text" name="firstName" class="put" placeholder="Email">
+                        <label for="firstName">PassWord:</label>
+                        <input type="text" name="firstName" class="put" placeholder="PassWord">
+                        <div class="check">
+                            <a href="#" class="for">forgot password?</a>
+                        </div>
+                    
+                        <div class="btne">
+                          <button type="submit" class="der">LOGIN</button>
+                        </div>
+                        <p>not a member? <a href="#" class="for">signup</a></p>
+                    </form>
     
-    <form action="" method="post" class="signlog sign-up">
-        <h5 class="message">fill-All-FIELD</h5>
-        <div class="grp">
-           
-            <label for="firstName" >firstName:</label>
-            <input type="text" name="firstName" id="firstName">
+                </div>
+            </div>
+          
         </div>
-        <div class="grp">
-            <label for="lastName">lastName:</label>
-            <input type="text" name="lastName" id="lastName">
-        </div>
-        <div class="grp">
-            <label for="email">email:</label>
-            <input type="email" name="email" id="email">
-        </div>
-        <div class="grp icon-position">
-            <label for="password">password:</label>
-            <input type="password" name="password" id="password">
-        <span class="togglePassword">
-            <i class="fa-solid fa-eye-slash"></i> 
-        </span>
-      
-        </div>
-        <div class="grp icon-position">
-            <label for="confirmPassword">confirmPassword:</label>
-        
-            <input type="password" name="confirmPassword" id="confirmPassword">
-            <i class="fa-solid fa-eye-slash"></i>
-        </div>
-        <div class="grp">
-    <button type="submit">sign-up</button>
-        </div>
-        <p class="parlog">if you have account tap here<a href="login.html">Login</a></p>
-    </form>
- <script src="./javascript/javascript.js"></script>
-<script src="./javascript/signup.js"></script>
+    </div>
+</body>
+</html>
