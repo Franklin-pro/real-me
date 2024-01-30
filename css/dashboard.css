@@ -1,0 +1,127 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: beige;
+}
+.dashboard-container{
+    background-color: rgba(0, 0, 0, 0.329);
+    height: 100vh;
+}
+.dashboard{
+    background-color: rgba(255, 255, 255, 0.63);
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.dashboard-left{
+    background-color: rgb(41, 41, 41);
+    height: 100vh;
+}
+.dashboard-right{
+    display: flex;
+    flex-direction: column;
+}
+.yuu{
+background-color: rgb(134, 134, 134);
+padding: 1rem 3rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+.profile{
+    width: 50px;
+    height: 50px;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: x-large;
+}
+.profile img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.card{
+    background-color: rgb(58, 58, 58);
+    color: #eee;
+    border-radius: .9rem;
+    padding: 2rem ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.card i,b{
+    font-size: x-large;
+    padding-bottom: 1rem;
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+.menu{
+ float: left;
+}
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    padding: 2rem;
+    flex-direction: column;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+td,th{
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.8rem;
+}
+.heads{
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding: 2rem;
+}
+.title{
+   
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem;
+    /* align-items: center; */
+
+    justify-content: center;
+}
+.inside{
+    font-size: 1.9rem;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    padding: 1rem;
+}
+.button{
+    background-color: rgb(22, 21, 21);
+}
+.button button{
+    padding: 1rem;
+    width: 100%;
+    background-color: rgb(95, 83, 83);
+    border: 0;
+    display: flex;
+    gap: 2rem;
+}
