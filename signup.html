@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="javascript/javascript.js"></script>
+    
 </head>
 <body>
     <div class="sign-container">
@@ -20,23 +20,24 @@
                     <form action="#" id="signup">
                         <h1>SIGN-UP</h1>
                         <label for="firstName">FirstName:</label>
-                        <input type="text" name="firstName" class="put" placeholder="FirstName">
-                        <label for="firstName">LastName:</label>
-                        <input type="text" name="firstName" class="put" placeholder="LastName">
-                        <label for="firstName">Email:</label>
-                        <input type="text" name="firstName" class="put" placeholder="Email">
-                        <label for="firstName">PassWord:</label>
-                        <input type="text" name="firstName" class="put" placeholder="PassWord">
+                        <input type="text" name="firstName" class="put" placeholder="FirstName" id="firstName" required>
+                        <label for="lastName">LastName:</label>
+                        <input type="text" name="lastName" class="put" placeholder="LastName" id="lastName" required>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" class="put" placeholder="Email" id="email" required>
+                        <label for="password">PassWord:</label>
+                        <input type="password" name="password" class="put" placeholder="PassWord" id="password" required>
                         <div class="btne">
-                          <button type="submit" class="der">SIGN-UP</button>
-                        </div>
+                            <button type="submit" class="der">SIGN-UP</button>
+                          </div>
                     </form>
+                    
                     <form action="#" id="login">
                         <h1>LOGIN</h1>
-                        <label for="firstName">Email:</label>
-                        <input type="text" name="firstName" class="put" placeholder="Email">
-                        <label for="firstName">PassWord:</label>
-                        <input type="text" name="firstName" class="put" placeholder="PassWord">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" class="put" placeholder="Email" id="email-address" required>
+                        <label for="password">PassWord:</label>
+                        <input type="password" name="password" class="put" placeholder="PassWord" id = "passwords" required>
                         <div class="check">
                             <a href="#" class="for">forgot password?</a>
                         </div>
@@ -52,5 +53,9 @@
           
         </div>
     </div>
+   
+    <script src="javascript/signup.js"></script>
+    <script src="javascript/login.js"></script>
+    <script src="javascript/javascript.js"></script>
 </body>
 </html>

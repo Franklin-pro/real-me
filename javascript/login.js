@@ -1,50 +1,26 @@
-const signlog = document.querySelector('.signlog')
-let nuse = document.querySelector('.message')
-
-signlog.addEventListener("submit", (e)=>{
+document.getElementById('login').addEventListener('submit', function (e) {
     e.preventDefault();
+    loginUser();
+});
 
-    let email = document.querySelector('#email').value;
-    let password = document.querySelector('#password').value;
+function loginUser() {
+    let loginEmail = document.getElementById('email-address').value;
+    let loginPassword = document.getElementById('passwords').value;
 
-    const data = {
-        email,
-        password
+    const storedUserData = JSON.parse(localStorage.getItem('userData'));
+
+    if (loginEmail.length ===0 || loginPassword.length === 0){
+        alert('please fill all fields')
     }
 
-    const api = `https://zealous-wasp-sun-hat.cyclic.app/api/v1/user/login`
+    if (storedUserData && storedUserData.email === loginEmail && storedUserData.password === loginPassword) {
+        alert('Login successful!');
+        window.location.href = "index.html"
 
-    const setPostman = {
-        method:'POST',
+    } else {
+        alert('Invalid email or password. Please try again.');
+    }
 
-        headers:{
-            "Content-Type":"application/json",
-        },
-        body:JSON.stringify(data),
-    };
-    fetch(api,setPostman)
 
-    .then((response)=>{
-        return response.json()
-    })
-    .then((data)=>{
-        if(data.token){
-            const token = (data.token)
-           localStorage.getItem("token",token)
-           if(data.data.user.role =="admin"){
-            window.location.href ="./admin.html"
-           }else{
-            window.location.href ="./index.html"
-           }
-        }else{
-            nuse.innerHTML = `
-            <h5 class="message">${data.message}</h5>
-            `
-            // alert(data.message)
-        }
-        
-        // localStorage.getItem("token",token)
-      
-      
-    })
-})
+    document.getElementById('login');
+}

@@ -1,48 +1,27 @@
-const signup = document.querySelector('.sign-up')
-
-signup.addEventListener("submit", (e)=>{
+document.getElementById('signup').addEventListener('submit', function (e) {
     e.preventDefault();
+    addData();
+});
 
-let firstName = document.querySelector('#firstName').value;
-let  lastName = document.querySelector('#lastName').value;
-let email = document.querySelector('#email').value;
-let password = document.querySelector('#password').value;
-let  confirmPassword = document.querySelector('#confirmPassword').value;
-let message = document.querySelector('.message')
+function addData() {
+    let firstName = document.getElementById('firstName').value;
+    let lastName = document.getElementById('lastName').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
 
-const data = {
-    firstName,
-    lastName ,
-    email,
-    password,
-    confirmPassword
+    const userData = {
+        firstName,
+        lastName,
+        email,
+        password
+    };
+if(firstName.length ===0 || lastName.length ===0 || email.length ===0 || password.length ===0){
+    alert('plz fill all fields')
+}
+    localStorage.setItem('userData', JSON.stringify(userData));
+
+    document.getElementById('signup').reset();
+
+    alert('Registration successful!');
 
 }
-
-
-const api = `https://zealous-wasp-sun-hat.cyclic.app/api/v1/user`
-const setPostman = {
-    method:"POST",
-
-    headers:{
-        "Content-Type":"application/json"
-    },
-    body:JSON.stringify(data),
-};
-fetch(api,setPostman)
-
-.then((response)=>{
-    return response.json();
-})
-
-.then((data)=>{
-  
-    message .innerHTML =`
-    <h5 class = "her">${data.message}</h5>
- `
-})
-
-.catch((err)=>{
-    alert(err)
-})
-})

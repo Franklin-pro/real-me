@@ -1073,19 +1073,22 @@ background-color: #222;
   align-items: center;
   padding: 1rem;
 }
+.choose button:hover{
+  background-color: #154081;
+}
 #signup{
   display: none;
 }
   .signup{
-display: flex;
-justify-content: center;
-align-items: center;
+/* display: flex;
+justify-content: center; */
+/* align-items: center; */
 padding: 2rem;
   }
   .check{
     padding: 2rem 0 0 0;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     align-items: center;
     gap: 2rem;
   }
@@ -1100,11 +1103,16 @@ padding: 2rem;
   .btne button{
     width: 100%;
     padding: 1rem;
+    transition: all .3s;
+  }
+  .btne button:hover{
+    background-color: #154081;
+    color: #ddd;
   }
 form{
 
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   justify-content: center;
   flex-direction: column;
   padding: 1rem;
@@ -1120,6 +1128,7 @@ form{
 label{
   padding: 1rem;
   font-size: 1.5rem;
+  float: left;
   color: #eee;
 }
 .for{
@@ -1139,6 +1148,7 @@ label{
   border: none;
   border-radius: 1.2rem;
 }
+
 #act{
   padding: 1rem 3rem;
   background-color: #154081;
@@ -1146,6 +1156,10 @@ label{
   border: none;
   border-radius: 1.2rem;
 }
+#act,#ac:hover{
+background-color: #154081;
+}
+
 /* --------------login hh----------- */
 /* 
 /* -----------------login signup responsive---------------- */
