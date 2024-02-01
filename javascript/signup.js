@@ -15,10 +15,14 @@ function addData() {
         email,
         password
     };
-if(firstName.length ===0 || lastName.length ===0 || email.length ===0 || password.length ===0){
-    alert('plz fill all fields')
-}
-    localStorage.setItem('userData', JSON.stringify(userData));
+
+    if(firstName.length ===0){
+const fnameError = document.querySelector('.eroo');
+fnameError.innerHTML = 'please firstname is required';
+    }
+const storeUser = JSON.parse(localStorage.getItem('storeUser')) || [];
+storeUser.push(userData)
+    localStorage.setItem('storeUser', JSON.stringify(storeUser));
 
     document.getElementById('signup').reset();
 
