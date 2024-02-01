@@ -15,7 +15,6 @@ function addData() {
         email,
         password
     };
-
     if(firstName.length ===0){
 const fnameError = document.querySelector('.eroo');
 fnameError.innerHTML = 'please firstname is required';
