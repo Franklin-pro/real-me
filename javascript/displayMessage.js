@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             const messageElement = document.createElement('div')
             messageElement.innerHTML =`
             <div class= "display">
+            <h1>Messages</h1>
             <div class="mess">
                   <div class="vigo">
                     <h2>${addMessage.fullName}/</h2>
