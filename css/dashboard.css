@@ -192,3 +192,40 @@ h1{
     padding: 1rem;
     font-size: 2rem;
 }
+.display-message{
+    background-color: rgba(245, 245, 245, 0.596);
+    display: flex;
+    justify-content: center;
+padding: 3rem;
+}
+.display{
+    background-color: rgb(255, 255, 255);
+    border-radius: .5rem;
+    color: #bbbbbb;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 50%; */
+    /* display: grid;
+    grid-template-columns: repeat(2,1fr); */
+}
+.vigo{
+    font-size: 1.8rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+   
+}
+.mess{
+    font-size: 1.3rem;
+    width: 100%;
+
+}
+.mess h2,h3{
+    padding: 1rem;
+    color: #696969;
+}
+.display p{
+    font-size: 1.9rem;
+    color: rgb(59, 107, 91);
+}

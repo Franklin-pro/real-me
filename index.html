@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="javascript/javascript.js"></script>
+    <link rel="shortcut icon" href="images/cee.jpg" type="image/x-icon">
   </head>
   <body>
     <nav>
@@ -198,11 +199,11 @@
       </div>
       <div class="contact-left">
 
-        <form>
-          <input type="text" id="names" placeholder=" your names"required>
-          <input type="text" id="names" placeholder=" your email"required>
-          <input type="text" id="names" placeholder=" phone number start with(+)"required>
-          <textarea required placeholder="type your message here.." ></textarea><br><br>
+        <form action="#" id="contact-me">
+          <input type="text" id="fullName" placeholder=" your names"required>
+          <input type="text" id="email" placeholder=" your email"required>
+          <input type="text" id="phone" placeholder=" phone number start with(+)"required>
+          <textarea required placeholder="type your message here.." id="message"></textarea><br><br>
           <div class="buton">
           <button type="submit">send</button>
         </div>
@@ -227,7 +228,7 @@
           </div>
           <h1>KK-616, p.o.box 1145 kigali-kicukiro,RWANDA,KIGALI</h1>
           <div class="icon-end">
-            <i class="fa-solid fa-phone" style="color: #ffffff;"></i><p>0783446449</p>
+            <i class="fa-solid fa-phone" style="color: #ffffff;"></i><p><a href="tel:0783446449" class="link">0783446449</a></p>
             <i class="fa-solid fa-envelope" style="color: #ffffff;"></i></i><p>Real-Me@gmail.com</p>
         </div>
         <div class="sub">
@@ -237,6 +238,7 @@
         </div>
       </div>
     </footer> 
+    <script src="javascript/contact.js"></script>
   </body>
 
 </html>
