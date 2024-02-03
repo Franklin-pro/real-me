@@ -14,15 +14,16 @@
         <div class="dashboard-left">
         <h1 class="heads">FRANKLIN-PRO</h1>
         <div class="title">
-            <a href="#" class="inside"><i class="fa-solid fa-gauge"></i>DASHBOARD</a>
+            <a href="#" class="inside" onclick="dashboard()"><i class="fa-solid fa-gauge"></i>DASHBOARD</a>
             <a href="#" class="inside"><i class="fa-solid fa-users"></i>USER</a>
             <a href="#" class="inside"><i class="fa-solid fa-newspaper"></i>ARTICLE</a>
-            <a href="#" class="inside"><i class="fa-solid fa-blog"></i>BLOGS</a>
+            <a href="#" class="inside" onclick="blog()"><i class="fa-solid fa-blog"></i>BLOGS</a>
             <a href="#" class="inside"><i class="fa-solid fa-thumbs-down"></i>DISLIKES</a>
             <a href="#" class="inside"><i class="fa-solid fa-thumbs-up"></i>LIKES</a>
             <a href="#" class="inside"><i class="fa-solid fa-comment"></i>COMMENTS</a>
-            <a href="#" class="inside"><i class="fa-regular fa-message"></i>MESSAGES</a>
+            <a href="#" class="inside" onclick="messages()"><i class="fa-regular fa-message"></i>MESSAGES</a>
             <a href="#" class="inside"><i class="fa-solid fa-gear"></i>SETTINGS</a>
+        
         </div>
         <div class="button">
             <a href="#" class="inside"><i class="fa-solid fa-arrow-right-from-bracket"></i>LOGOUT</a>
@@ -39,25 +40,40 @@
              </div>
             </nav>
 
-           <!-- <div class="blog-post">
-              <div class="blogx">
-                  <form action="#" method="post" id="form">
-                    <h1>Blogs</h1>
-                    <label for="blog-title">BLOGS-TITLE</label>
-                    <input type="text" name="blog-title" placeholder="enter blog title" class="field" id="blog-Title" required>
+           <div class="blog-post">
+            <div class="blogx">
+              <form action="your_server_endpoint" method="post" id="form" enctype="multipart/form-data">
+
+                  <h1>Blogs</h1>
+                  <label for="blog-title">BLOGS-TITLE</label>
+                  <input type="text" name="blog-title" placeholder="enter blog title" class="field" id="blog-Title" required>
           
-                    <label for="blog-description">BLOGS-DESCRIPTION</label>
-                    <input type="text" name="blog-description" placeholder="enter blog-description" class="field" id="blog-description" required>
-                    <label for="blog-image">BLOGS-image</label>
-                    <input type="text" name="blog-image" class="field" id="blog-image" placeholder="upload blog-Image">
-                    <div class="btnw">
+                  <label for="blog-description">BLOGS-DESCRIPTION</label>
+                  <input type="text" name="blog-description" placeholder="enter blog-description" class="field" id="blog-description" required>
+          
+                  <label for="imageInput">BLOGS-image</label>
+                  <input type="file" name="imageInput" class="field" id="blog-image" accept="image/*" placeholder="upload blog-Image">
+          
+                  <div class="btnw">
                       <button type="submit" class="btn-a">POST-BLOGS</button>
-                    </div>
-                
-                  </form>
-               
-              </div>
-            </div>  -->
+                  </div>
+              </form>
+          </div>
+          
+              <div class="table">
+                <h1>USER-TABLE</h1>
+                <table border="1">
+                   <tr>
+                        <th>NO</th>
+                        <th>Blog-Title</th>
+                        <th>Blog-Description</th>
+                        <th>Blog-Image</th>
+                        <th colspan="2">option</th>
+                    </tr>
+
+                </table>
+               </div>
+            </div> 
 
             <div class="display-message" id="messages">
              <div id="messagesContainer"></div>
@@ -65,7 +81,7 @@
 
 
 
-            <!-- <div class="inside-dash">
+            <div class="inside-dash">
                 <div class="card-container">
                     <div class="card">
                         <i class="fa-solid fa-blog" style="color: #ffffff;"></i>
@@ -165,10 +181,11 @@
 
                 </table>
                </div>
-            </div> -->
+            </div>
         </div>
     </div>
    </div>
+   <script src="./javascript/children.js"></script>
    <script src="./javascript/blogs.js"></script>
    <script src="./javascript/displayMessage.js"></script>
 </body>

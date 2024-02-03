@@ -133,7 +133,8 @@ td,th{
     /* background-color: rgb(200, 200, 200); */
     margin: 0 25px;
     height: 80vh;
-    display: flex;
+    display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2rem;
@@ -194,7 +195,7 @@ h1{
 }
 .display-message{
     background-color: rgba(245, 245, 245, 0.596);
-    display: flex;
+    display: none;
     justify-content: center;
 padding: 3rem;
 }

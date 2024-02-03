@@ -25,3 +25,4 @@ blogs.addEventListener('submit', (e) => {
     localStorage.setItem('storeData', JSON.stringify(storeData));
     alert('blogs posted successfully');
 });
+

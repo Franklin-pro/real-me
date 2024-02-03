@@ -19,7 +19,7 @@ function loginUser() {
 
         if (user) {
             alert('Login successful!');
-            window.location.href = "index.html";
+            window.location.href = "admin.html";
         } else {
             alert('Invalid email or password. Please try again.');
         }
