@@ -76,11 +76,14 @@ align-items: center;
     display: flex;
     justify-content: center;
     align-items: center;
+   
     font-size: 1.3rem;
     padding: 2rem;
     flex-direction: column;
 }
 table{
+    background-color: #203036;
+    color: #eee;
     width: 100%;
     border-collapse: collapse;
 }

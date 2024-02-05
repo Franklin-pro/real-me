@@ -20,39 +20,24 @@ function dashboard(){
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const storedData = localStorage.getItem('storeData');
-    let blogDataArray = [];
-
-    if (storedData) {
-        blogDataArray = JSON.parse(storedData);
-        displayBlogData(blogDataArray);
-    }
+    let blogDataArray = loadBlogData();
 
     const blogForm = document.getElementById('blogForm');
     if (blogForm) {
-        blogForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            const blogTitle = document.getElementById('blogTitle').value;
-            const blogDescription = document.getElementById('blogDescription').value;
-            const blogImage = document.getElementById('blogImage').value;
-
-            const newBlogData = {
-                blogTitle,
-                blogDescription,
-                blogImage
-            };
-
-            blogDataArray.push(newBlogData);
-
-            localStorage.setItem('storeData', JSON.stringify(blogDataArray));
-
-            displayBlogData(blogDataArray);
-
-            blogForm.reset();
-        });
+        blogForm.addEventListener('submit', onSubmit);
     }
+
+    displayBlogData(blogDataArray);
 });
+
+function loadBlogData() {
+    const storedData = localStorage.getItem('storeData');
+    return storedData ? JSON.parse(storedData) : [];
+}
+
+function saveBlogData(blogDataArray) {
+    localStorage.setItem('storeData', JSON.stringify(blogDataArray));
+}
 
 function displayBlogData(blogDataArray) {
     const tableBody = document.querySelector('.table table tbody');
@@ -66,50 +51,53 @@ function displayBlogData(blogDataArray) {
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>${blogData.blogTitle}</td>
-            <p>${truncateText(blogData.blogDescription, 10)}</p>
+            <td>${truncateText(blogData.blogDescription, 10)}</td>
             <td>${blogData.blogImage}</td>
-            <td><i class="fa-solid fa-trash" style="color: #e71313;" onclick="deleteBlog(${index})"></i></td>
-            <td><i class="fa-solid fa-pen-to-square" style="color: #057a4d;" onclick="updateBlog(${index})"></i></td>
+            <td><i class="fa-solid fa-trash" style="color: #e71313;" onclick="deleteBlog(${blogData.id})"></i></td>
+            <td><i class="fa-solid fa-pencil" style="color: green;" onclick="updateBlog(${blogData.id})"></i></td>
         `;
         tableBody.appendChild(row);
     });
 }
+
 function truncateText(text, maxLength) {
     const words = text.split(' ');
     const truncatedWords = words.slice(0, maxLength);
     return truncatedWords.join(' ') + (words.length > maxLength ? '...' : '');
 }
 
-function deleteBlog(index) {
-    blogDataArray.splice(index, 1);
-    localStorage.setItem('storeData', JSON.stringify(blogDataArray));
-    displayBlogData(blogDataArray);
+function deleteBlog(blogId) {
+    const blogDataArray = loadBlogData();
+    const indexToDelete = blogDataArray.findIndex(blog => blog.id === blogId);
+
+    if (indexToDelete !== -1) {
+        blogDataArray.splice(indexToDelete, 1);
+        saveBlogData(blogDataArray);
+        displayBlogData(blogDataArray);
+    }
 }
-const blogForm = document.getElementById('form');
-if (blogForm) {
-    const onSubmit = (event) => {
-        event.preventDefault();
 
-        const blogTitle = document.getElementById('blogTitle').value;
-        const blogDescription = document.getElementById('blogDescription').value;
-        const blogImage = document.getElementById('blogImage').value;
+function onSubmit(event) {
+    event.preventDefault();
 
-        const newBlogData = {
-            blogTitle,
-            blogDescription,
-            blogImage
-        };
+    const blogTitle = document.getElementById('blogTitle').value;
+    const blogDescription = document.getElementById('blogDescription').value;
+    const blogImage = document.getElementById('blogImage').value;
 
-        blogDataArray.push(newBlogData);
-
-        localStorage.setItem('storeData', JSON.stringify(blogDataArray));
-
-        displayBlogData();
-
-        blogForm.reset();
+    const newBlogData = {
+        id: new Date().getTime(),
+        blogTitle,
+        blogDescription,
+        blogImage
     };
 
-    blogForm.addEventListener('submit', onSubmit);
+    blogDataArray.push(newBlogData);
+    saveBlogData(blogDataArray);
+
+    displayBlogData(blogDataArray);
+
+ 
+    blogForm.reset();
 }
 
 
