@@ -66,13 +66,18 @@ function displayBlogData(blogDataArray) {
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>${blogData.blogTitle}</td>
-            <td>${blogData.blogDescription}</td>
+            <p>${truncateText(blogData.blogDescription, 10)}</p>
             <td>${blogData.blogImage}</td>
-            <td><button onclick="deleteBlog(${index})">delete</button></td>
-            <td><button onclick="updateBlog(${index})">update</button></td>
+            <td><i class="fa-solid fa-trash" style="color: #e71313;" onclick="deleteBlog(${index})"></i></td>
+            <td><i class="fa-solid fa-pen-to-square" style="color: #057a4d;" onclick="updateBlog(${index})"></i></td>
         `;
         tableBody.appendChild(row);
     });
+}
+function truncateText(text, maxLength) {
+    const words = text.split(' ');
+    const truncatedWords = words.slice(0, maxLength);
+    return truncatedWords.join(' ') + (words.length > maxLength ? '...' : '');
 }
 
 function deleteBlog(index) {
@@ -80,15 +85,32 @@ function deleteBlog(index) {
     localStorage.setItem('storeData', JSON.stringify(blogDataArray));
     displayBlogData(blogDataArray);
 }
+const blogForm = document.getElementById('form');
+if (blogForm) {
+    const onSubmit = (event) => {
+        event.preventDefault();
 
-function updateBlog(index) {
-    // Implement your logic to update a blog entry, if needed.
-    // For example, you can pre-fill the form fields with existing data for editing
-    alert('welcome')
+        const blogTitle = document.getElementById('blogTitle').value;
+        const blogDescription = document.getElementById('blogDescription').value;
+        const blogImage = document.getElementById('blogImage').value;
+
+        const newBlogData = {
+            blogTitle,
+            blogDescription,
+            blogImage
+        };
+
+        blogDataArray.push(newBlogData);
+
+        localStorage.setItem('storeData', JSON.stringify(blogDataArray));
+
+        displayBlogData();
+
+        blogForm.reset();
+    };
+
+    blogForm.addEventListener('submit', onSubmit);
 }
 
 
-function updateBlog(index) {
-    // Implement your logic to update a blog entry, if needed.
-    // For example, you can pre-fill the form fields with existing data for editing.
-}
+

@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () =>{
                   </div>
                   
                   <p>${addMessage.message}</p>
+                  <i class="fa-solid fa-trash" style="color: #e71313;"></i>
                  </div>
                  </div>
             `;

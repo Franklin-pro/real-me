@@ -95,6 +95,45 @@ box-shadow: 2px 2px 2px solid rgb(255, 255, 255);
 
 }
 
+.read-container{
+  padding: 4rem;
+}
+.readmore{
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  gap: 3rem;
+  
+}
+
+.all-description{
+
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #353535;
+  line-height: 2rem;
+}
+.icons{
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  font-size: 1.4rem;
+}
+.icons b{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.comments{
+  background-color: #cccccc;
+  padding: 2rem;
+}
+.comme{
+  padding: 1rem 0 ;
+  line-height: 2rem;
+}
+
 .home-page{
   height: 100vh;
   display: flex;
