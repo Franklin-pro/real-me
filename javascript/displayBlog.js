@@ -25,6 +25,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// document.getElementById("like-btn").addEventListener("click", function () {
+//     const articleId = 123;
+//     const storeData= JSON.parse(localStorage.getItem("storeData"));
+//     const article = storeData.find((article) => article.id === articleId);
+//     let likeIcon = document.querySelector("#like-btn img:first-child");
+//     let likeFilledIcon = document.querySelector("#like-btn img:last-child");
+  
+//     likeIcon.classList.toggle("hide");
+//     likeFilledIcon.classList.toggle("hide");
+  
+//     if (likeIcon.classList.contains("hide")) {
+//       article.likes--;
+//     } else {
+//       article.likes++;
+//     }
+  
+//     localStorage.setItem("storeData", JSON.stringify(storeData));
+//   });
+
 function truncateText(text, maxLength) {
     const words = text.split(' ');
     const truncatedWords = words.slice(0, maxLength);
@@ -36,12 +56,14 @@ function showDetailedBlog(index) {
     const detailedBlogContainer = document.getElementById('detailedBlog');
     detailedBlogContainer.innerHTML = `
     <div class="all-description">
-  
+    <img src="${blogDataArray[index].blogImage}" />
         <h1>${blogDataArray[index].blogTitle}</h1>
         <p>${blogDataArray[index].blogDescription}</p>
         <div class="icons">
-        <b><i class="fa-solid fa-thumbs-up" style="color: #413f3f;"></i>10k</b>
-        <b><i class="fa-solid fa-thumbs-down" style="color: #413f3f;"></i>12</b>
+        <span id="like-btn" class="cursor-pointer">
+        <img src="./images/like-icon.png" />
+        <img class="hide" src="./imageslike-filled-icon.png" />
+      </span>
         <b><i class="fa-solid fa-comment" style="color: #413f3f;"></i>300</b>
 </div>
         

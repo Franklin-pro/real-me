@@ -38,6 +38,6 @@ blogs.addEventListener('submit', (e) => {
     storeData.push(blogData);
 
     localStorage.setItem('storeData', JSON.stringify(storeData));
-    alert(blogImage.length);
+    alert('new blogs posted successfully');
 });
 

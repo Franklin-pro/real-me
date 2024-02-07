@@ -129,8 +129,20 @@ td,th{
     gap: 2rem;
 }
 
+.texts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   padding: 4rem;
+}
+.portfolio-container{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+}
 
 /* ---------------------forms dashboards------------------ */
+
 
 .blog-post{
     /* background-color: rgb(200, 200, 200); */
@@ -141,6 +153,12 @@ td,th{
     justify-content: center;
     align-items: center;
     padding: 2rem;
+}
+.portfolio-container{
+    display: none;
+}
+.service-cards{
+   display: flex;
 }
 .blogx{
    

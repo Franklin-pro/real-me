@@ -16,7 +16,7 @@
         <div class="title">
             <a href="#" class="inside" onclick="dashboard()"><i class="fa-solid fa-gauge"></i>DASHBOARD</a>
             <a href="#" class="inside"><i class="fa-solid fa-users"></i>USER</a>
-            <a href="#" class="inside"><i class="fa-solid fa-newspaper"></i>ARTICLE</a>
+            <a href="#" class="inside"><i onclick="port()" class="fa-solid fa-newspaper"></i>PORTFOLIO</a>
             <a href="#" class="inside" onclick="blog()"><i class="fa-solid fa-blog"></i>BLOGS</a>
             <a href="#" class="inside"><i class="fa-solid fa-thumbs-down"></i>DISLIKES</a>
             <a href="#" class="inside"><i class="fa-solid fa-thumbs-up"></i>LIKES</a>
@@ -182,11 +182,45 @@
                 </table>
                </div>
             </div>
+<div class="portfolio-container">
+  <h1>PORTFOLIO POST</h1>
+  <div class="ports">
+    <div class="texts">
+      <form action="#" class="fors">
+        <label for="title">Portfolio-title:</label>
+        <input type="text" name="title" placeholder="Portfolio-title" class="field" id="portTitle">
+        <label for="summary">Portfolio-Summary:</label>
+        <input type="text" name="summary" placeholder="Portfolio-summary"class="field" id="portSummary">
+        <label for="summary">Portfolio-Image:</label>
+        <input type="file" name="summary" class="field" id="portImage">
+        
+        <div class="btnw">
+          <button type="submit" class="btn-a">POST-PORTFOLIO</button>
+      </div>
+      </form>
+    </div>
+  </div>
+  <div class="table">
+    <h1>USER-TABLE</h1>
+    <table border="1">
+       <tr>
+            <th>NO</th>
+            <th>PORTFOLIO-Title</th>
+            <th>PORTFOLIO-Description</th>
+            <th>PORTFOLIO-Image</th>
+            <th colspan="2">option</th>
+        </tr>
+
+    </table>
+   </div>
+</div>
+           
         </div>
     </div>
    </div>
    <script src="./javascript/children.js"></script>
    <script src="./javascript/blogs.js"></script>
+   <script src="./javascript/portfolio.js"></script>
    <script src="./javascript/displayMessage.js"></script>
 </body>
 </html>

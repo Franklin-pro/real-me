@@ -336,14 +336,14 @@ justify-content: center;
   .service-card{
    
     display: grid;
-grid-template-columns: repeat(3,1fr);
+grid-template-columns: repeat(2,1fr);
     padding:1rem 1rem 1rem 4rem;
     gap: 2rem;
   }
-  .card{
-    background-color: #2b68c4;
+
+    /* background-color: #2b68c4; */
     /* padding: 1rem; */
-  }
+  
   .hello{
   
     padding: 1rem;
@@ -649,9 +649,15 @@ border-radius: 1rem;
     padding: .6rem;
   }
 
-
   .blogs{
     background-color: rgb(255, 255, 255);
+  }
+  .hide {
+    display: none;
+    background-color: red;
+  }
+  #like-btn{
+    cursor: pointer;
   }
   .blogs-card{
    
