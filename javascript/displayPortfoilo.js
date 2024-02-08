@@ -15,8 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function createportElement(portfolio, index) {
     const portElement = document.createElement('div');
-    portElement.classList.add('service-card');
+    portElement.classList.add('service-container');
     portElement.innerHTML = `
+    
         <div class="card">
         <div class="imagex">
           <img src="${portfolio.portImage}" alt="">

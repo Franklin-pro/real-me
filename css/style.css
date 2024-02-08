@@ -317,6 +317,7 @@ gap: 2rem;
   .service-container{
     background-color: #203036;
     font-family: 'Roboto', sans-serif;
+
     /* height: 100vh; */
   }
   .service-container h1{
@@ -333,13 +334,15 @@ display: flex;
 font-size: 2rem;
 justify-content: center;
   }
-  .service-card{
-   
+
+  /* .service-cards{
+   justify-content: center;
+   align-items: center;
     display: grid;
 grid-template-columns: repeat(2,1fr);
     padding:1rem 1rem 1rem 4rem;
     gap: 2rem;
-  }
+  } */
 
     /* background-color: #2b68c4; */
     /* padding: 1rem; */

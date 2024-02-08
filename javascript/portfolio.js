@@ -38,5 +38,5 @@ form.addEventListener('submit', (e) => {
     storeportData.push(blogData);
 
     localStorage.setItem('storeportData', JSON.stringify(storeportData));
-    alert(blogImage.length);
+    alert('portifolio posted successfully');
 });
