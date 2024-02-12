@@ -17,9 +17,9 @@ blogs.addEventListener('submit', (e) => {
         }
       };
 
-    let blogTitle = document.getElementById('blog-Title').value;
-    let blogImage = document.getElementById('blog-image');
-    let blogDescription = document.getElementById('blog-description').value;
+    let blogTitle = document.getElementById('blogTitle').value;
+    let blogImage = document.getElementById('blogImage');
+    let blogDescription = document.getElementById('blogDescription').value;
     let id =new Date().getTime()
 
     const blogData = {
