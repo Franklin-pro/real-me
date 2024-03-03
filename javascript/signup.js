@@ -7,24 +7,34 @@ function addData() {
     let firstName = document.getElementById('firstName').value;
     let lastName = document.getElementById('lastName').value;
     let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
+    let password = document.getElementById('passWord').value;
+    let confirmPassword = document.getElementById('confirmPassword')
 
     const userData = {
         firstName,
         lastName,
         email,
-        password
+        password,
+        confirmPassword
+
     };
-    if(firstName.length ===0){
-const fnameError = document.querySelector('.eroo');
-fnameError.innerHTML = 'please firstname is required';
-    }
-const storeUser = JSON.parse(localStorage.getItem('storeUser')) || [];
-storeUser.push(userData)
-    localStorage.setItem('storeUser', JSON.stringify(storeUser));
 
-    document.getElementById('signup').reset();
+    const api = `https://branding-xokk.onrender.com/user`;
 
-    alert('Registration successful!');
+    const postman = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    };
 
+    fetch(api,postman)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
