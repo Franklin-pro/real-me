@@ -7,8 +7,8 @@ function addData() {
     let firstName = document.getElementById('firstName').value;
     let lastName = document.getElementById('lastName').value;
     let email = document.getElementById('email').value;
-    let password = document.getElementById('passWord').value;
-    let confirmPassword = document.getElementById('confirmPassword')
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirmPassword').value;
 
     const userData = {
         firstName,
@@ -19,7 +19,7 @@ function addData() {
 
     };
 
-    const api = `https://branding-xokk.onrender.com/user`;
+    const api = `https://realme-backend.onrender.com/user`;
 
     const postman = {
         method: 'POST',
@@ -32,7 +32,7 @@ function addData() {
     fetch(api,postman)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+           alert(data.message);
         })
         .catch(error => {
             console.error('Error:', error);

@@ -1,43 +1,55 @@
-
+const token = window.localStorage.getItem("token");
 const blogs = document.getElementById('form');
 
-blogs.addEventListener('submit', (e) => {
+blogs.addEventListener('submit', async (e) => {
     e.preventDefault();
+    
+    try {
+        const id = new Date().getTime();
+        const imageData = await processImage(id, document.getElementById('blogImage'));
 
-    const processImage = (id, input) => {
-        if (input.files && input.files[0]) {
-          const reader = new FileReader();
-          reader.onload = function (e) {
-            const articles = JSON.parse(localStorage.getItem("storeData")) || [];
-            const article = articles.find((article) => article.id === id);
-            article.blogImage = e.target.result;
-            localStorage.setItem("storeData", JSON.stringify(articles));
-          };
-          reader.readAsDataURL(input.files[0]);
+       
+        const blogTitle = document.getElementById('blogTitle').value;
+        const blogDescription = document.getElementById('blogDescription').value;
+        const blogData = {
+            id: id,
+            blogTitle: blogTitle,
+            blogImage: imageData,
+            blogDescription: blogDescription
+        };
+
+      
+        const response = await fetch("https://realme-backend.onrender.com/blogs", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": token,
+            },
+            body: JSON.stringify(blogData),
+        });
+
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-      };
 
-    let blogTitle = document.getElementById('blogTitle').value;
-    let blogImage = document.getElementById('blogImage');
-    let blogDescription = document.getElementById('blogDescription').value;
-    let id =new Date().getTime()
-
-    const blogData = {
-        id: id,
-        blogTitle,
-        blogImage :processImage(id,blogImage),
-        blogDescription
-    };
-    let storeData = localStorage.getItem('storeData');
-
-    storeData = storeData ? JSON.parse(storeData) : [];
-    if (!Array.isArray(storeData)) {
-        storeData = [];
+        alert('New blog posted successfully');
+    } catch (error) {
+        console.log(error);
+        alert('Error posting blog');
     }
-
-    storeData.push(blogData);
-
-    localStorage.setItem('storeData', JSON.stringify(storeData));
-    alert('new blogs posted successfully');
 });
 
+const processImage = (id, input) => {
+    return new Promise((resolve, reject) => {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                resolve(e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            reject("No file selected");
+        }
+    });
+};

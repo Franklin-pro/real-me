@@ -1,29 +1,46 @@
-document.getElementById('login').addEventListener('submit', function (e) {
+const login=document.querySelector("#login")
+
+login.addEventListener("submit",(e)=>{
     e.preventDefault();
-    loginUser();
-});
 
-function loginUser() {
-    let loginEmail = document.getElementById('email-address').value;
-    let loginPassword = document.getElementById('passwords').value;
+    let email=document.querySelector("#emails").value;
+    let password=document.querySelector("#passWords").value;
 
-    const storedUserData = JSON.parse(localStorage.getItem('storeUser'));
-
-    if (!loginEmail || !loginPassword) {
-        alert('Please fill in all fields.');
-        return;
-    }
-
-    if (storedUserData) {
-        const user = storedUserData.find(user => user.email === loginEmail && user.password === loginPassword);
-
-        if (user) {
-            alert('Login successful!');
-            window.location.href = "admin.html";
-        } else {
-            alert('Invalid email or password. Please try again.');
+    const userData={
+        email,
+        password,
+    };
+   
+    const api = `https://realme-backend.onrender.com/user/login`;
+    const postman = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    };
+    fetch(api, postman)
+    .then(response => {
+        console.log(response.status);
+        return response.json();
+    })
+    .then((data)=>{
+        if(data.token){
+            const token = data.token;
+            localStorage.setItem("token",token);
+            if(data.data.user.role=="admin"){
+              window.location.href="/admin.html";
+            }
+            else{
+                window.location.href="./index.html";
+            }
         }
-    } else {
-        alert('No user data found. Please sign up first.');
-    }
-}
+        else{
+            alert(data.message);
+        }
+    })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+});

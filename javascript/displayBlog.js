@@ -30,53 +30,69 @@
 // likes.addEventListener("click", function () {
 
 //   });
-  document.addEventListener('DOMContentLoaded', function() {
-    const storedData = localStorage.getItem('storeData');
-    if (storedData) {
-        const blogDataArray = JSON.parse(storedData);
 
-        const blogContainer = document.getElementById('blogContainer');
+const blogContainer = document.querySelector('.blogs')
 
-        blogDataArray.forEach((blogData, index) => {
-            const blogElement = document.createElement('div');
-            blogElement.classList.add('blogs-card');
-            blogElement.innerHTML = `
-                <div class="card1">
-                    <div class="image">
-                        <img src="${blogData.blogImage}" alt="Blog Image">
-                    </div>
-                    <div class="text">
-                        <h3>${blogData.blogTitle}</h3>
-                        <p>${truncateText(blogData.blogDescription, 10)}</p>
-                        <a href="#" class="read" onclick="showDetailedBlog(${index})">readmore...</a>
-                    </div>
-                </div>
-            `;
-            blogContainer.appendChild(blogElement);
-        });
-    }
-    const likeBtn = document.getElementById("like-btn");
-    if (likeBtn) {
-        likeBtn.addEventListener("click", function () {
-            const articleId = 123;
-            const storeData= JSON.parse(localStorage.getItem("storeData"));
-            const article = storeData.find((article) => article.id === articleId);
-            let likeIcon = document.querySelector(".fa-heart");
-            let likeFilledIcon = document.querySelector("#like-btn img:last-child");
+fetch(`https://realme-backend.onrender.com/blogs`)
+.then(response=>{
+    return response.json()
+})
+.then((data)=>{
+   data.data.map((blogData, index) => {
+    console.log(blogData)
+                    const blogElement = document.createElement('div');
+                    blogElement.classList.add('blogs-card');
+                    blogElement.innerHTML = `
+                        <div class="card1">
+                            <div class="image">
+                                <img src="${blogData.blogImage}" alt="Blog Image">
+                            </div>
+                            <div class="text">
+                                <h3>${blogData.blogTitle}</h3>
+                                <p>${truncateText(blogData.blogDescription, 10)}</p>
+                                <a href="./readmore?id=${blogData._id}" class="read">readmore...</a>
+                            </div>
+                        </div>
+                    `;
+                    blogContainer.appendChild(blogElement);
+                });
+    // alert(data.message)
+}).catch(error=>{
+    console.log(error)
+})
+
+
+
+
+
+
+
+
+
+
+
+//     const likeBtn = document.getElementById("like-btn");
+//     if (likeBtn) {
+//         likeBtn.addEventListener("click", function () {
+//             const articleId = 123;
+//             const storeData= JSON.parse(localStorage.getItem("storeData"));
+//             const article = storeData.find((article) => article.id === articleId);
+//             let likeIcon = document.querySelector(".fa-heart");
+//             let likeFilledIcon = document.querySelector("#like-btn img:last-child");
           
-            likeIcon.classList.toggle("hide");
-            likeFilledIcon.classList.toggle("hide");
+//             likeIcon.classList.toggle("hide");
+//             likeFilledIcon.classList.toggle("hide");
           
-            if (likeIcon.classList.contains("hide")) {
-              console.log(article.likes--);
-            } else {
-                console.log(article.likes++);
-            }
+//             if (likeIcon.classList.contains("hide")) {
+//               console.log(article.likes--);
+//             } else {
+//                 console.log(article.likes++);
+//             }
           
-            localStorage.setItem("storeData", JSON.stringify(storeData));
-        });
-    }
-});
+//             localStorage.setItem("storeData", JSON.stringify(storeData));
+//         });
+//     }
+// });
 
 function truncateText(text, maxLength) {
     const words = text.split(' ');
@@ -84,33 +100,8 @@ function truncateText(text, maxLength) {
     return truncatedWords.join(' ') + (words.length > maxLength ? '...' : '');
 }
 
-function showDetailedBlog(index) {
-    const blogDataArray = JSON.parse(localStorage.getItem('storeData'));
-    const detailedBlogContainer = document.getElementById('detailedBlog');
-    detailedBlogContainer.innerHTML = `
-    <div class="all-description">
-    <img src="${blogDataArray[index].blogImage}" />
-        <h1>${blogDataArray[index].blogTitle}</h1>
-        <p>${blogDataArray[index].blogDescription}</p>
-        <div class="icons">
-        <span id="like-btn" class="cursor-pointer">
-        <i class="fa-regular fa-heart"></i>
-        <img class="hide" src="./imageslike-filled-icon.png" />
-      </span>
-        <b><i class="fa-solid fa-comment" style="color: #413f3f;"></i>300</b>
-</div>
-        
-            <div class="comments">
-            ${renderComments(blogDataArray[index].comments)}
-            <input type="text" name="comment" id="commentInput" placeholder="add comment">
-            <button onclick="addComment(${index})">comment</button>
-        </div>
-        </div>
-    </div>
-    </div>
-    `;
-    openModal();
-}
+
+
 
 function openModal() {
     const modal = document.getElementById('blogModal');

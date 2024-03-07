@@ -1131,9 +1131,9 @@ padding: 3rem;
 .choose button:hover{
   background-color: #154081;
 }
-#signup{
+/* #signup{
   display: none;
-}
+} */
   .signup{
 /* display: flex;
 justify-content: center; */

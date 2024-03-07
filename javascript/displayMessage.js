@@ -12,7 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+const api = `https://realme-backend.onrender.com/message`
 
+fetch(api)
+.then(response=>{
+    return response.json()
+})
 function createMessageElement(message, index) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('display');
