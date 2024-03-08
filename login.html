@@ -1,15 +1,29 @@
-<form action="#" id="login">
-    <h1>LOGIN</h1>
-    <label for="email">Email:</label>
-    <input type="email" name="email" class="put" placeholder="Email" id="email" required>
-    <label for="passWord">PassWord:</label>
-    <input type="password" name="passWord" class="put" placeholder="PassWord" id= "passWord" required>
-    <div class="check">
-        <a href="#" class="for">forgot password?</a>
-    </div>
-
-    <div class="btne">
-      <button type="submit" class="der">LOGIN</button>
-    </div>
-    <p>not a member? <a href="#" class="for">signup</a></p>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="form-container">
+    <form action="" id="login">
+        <h4>Login Form</h4>
+        <div class="input-box">
+            <label htmlFor="">Email</label>
+            <input type="text" required name="email" id="email"/>
+        </div>
+        <div class="input-box">
+            <label htmlFor="password">Password</label>
+            <input type="text" name="password" id="password"/>
+        </div>
+        <p>if you don't have an account? <a href="./signup.html">Signup</a></p>
+        <div class="btn">
+            <button>Login</button>
+        </div>
+    </form>
+  </div>
+  <script src="./javascript/login.js"></script>
+</body>
+</html>

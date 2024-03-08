@@ -12,9 +12,12 @@
   <body>
     <nav>
       <div class="nav-links">
-        <div class="logo">
-          <h1>FRANKLIN</h1>
+        <div class="linka">
+          <div class="logo">
+            <h1>FRANKLIN</h1>
+          </div>
         </div>
+        
         <ul class="links">
           <li><a href="#home" class="link">Home</a></li>
           <li><a href="#about" class="link">About-Me</a></li>
@@ -22,12 +25,15 @@
           <li><a href="#skills" class="link">My-Skills</a></li>
           <li><a href="#contact" class="link">Contact-ME</a></li>
           <li><a href="blogs.html" class="link">blogs</a></li>
-          <li><a href="./colorlib-regform-34/colorlib-regform-34/index.html" class="link btn">LOGIN</a></li>
+   
         </ul>
           
           <div class="menu">
-            <i class="fa-solid fa-bars" style="color: #ffffff;" onclick="navOpen()"></i>
+            <i class="fa-solid fa-bars" onclick="navOpen()"></i>
           </div>
+          <button type="submit" class="hire" name="hire" onclick="hire()">
+            <a href="./colorlib-regform-34/colorlib-regform-34/index.html" class="link btn">LOGIN</a>
+          </button>
       
     </nav>
     <!-- -------------homepage-------------- -->
@@ -54,7 +60,7 @@
       </div>
     </div>
 <script src="index.js"></script>
-<hr>
+
    
     <!-- -------------about me-------------- -->
 
@@ -75,25 +81,44 @@
               <h3>PHONE-NUMBER: 0790019543</h3>
               <h3>EMAIL: franklinprogrammer@gmail.com</h3>
             </div>
-            <button type="submit" class="hir" name="hire" onclick="hire()">
+            <button type="submit" class="hire" name="hire" onclick="hire()">
               Download CV
              </button>
         </div>
       </div>
     </div>
-    <hr>
+   
     <div class="service-container" id="work">
-      <h1>My <span class="span">Portfolio</span></h1>
+      <h1 class="head">My <span class="span">Portfolio</span></h1>
       <div class="serves">
-        <div class="hello">
-          <a href="#" class="hel actives">ALL</a><a href="#" class="hel">UI/UX DESIGN</a>
-          <a href="#" class="hel">FRONT-END PROJECT</a><a href="#" class="hel">BACK-END PROJECT</a>
-        </div>
+       
         <div class="service-cards">
-          <div class="ser">
-            <div id="portfolioContainer"></div>
+      <div class="card">
+        <div class="image-card">
+          <img src="./images/alight.jpeg" alt="">
+        </div>
+        <div class="text-card">
+          <h1>alight Rwanda</h1>
+          <p>i was making on front-end & back-end </p>
+          <div class="nextp">
+            <a href="#" class="hel">view other project<i class="fa-solid fa-arrow-right"></i></a>
           </div>
-         
+        </div>
+      </div>
+      <div class="card">
+        <div class="image-card">
+          <img src="./images/filmz.jpeg" alt="">
+        </div>
+        <div class="text-card">
+          <h1>KUHI</h1>
+          <p>i was making on front-end & back-end </p>
+          <div class="nextp">
+            <a href="#" class="hel">view other project<i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+      
+          </div>
           </div>
           <!-- <div class="imagex">
             <img src="./images/alight.jpeg" alt="">
@@ -126,9 +151,7 @@
                   <p>i was doing BACK-END,FRONT-END,UI/UX DESIGN on this project only</p>
                   <a href="#" class="read">VISIT WEB NOW<i class="fa-solid fa-arrow-right"></i></a>
                 </div> -->
-                <div class="nextp">
-                  <a href="#" class="hel">view other project<i class="fa-solid fa-arrow-right"></i></a>
-                </div>
+             
        
        
        
@@ -136,9 +159,9 @@
       </div>
 
     </div>
-    <hr>
+
     <!-- //skill-container  -->
-<div class="skill-container" id="skills">
+ <!-- <div class="skill-container" id="skills"> 
   <h1 class="head">MY <span class="span">Skills</span></h1>
   <div class="skills">
 <h1>HTML</h1>
@@ -173,10 +196,10 @@
 </div>
 </div>
 
-</div>
-<hr>
+</div> -->
+
  
-    <div class="contact-container" id="contact">
+    <!-- <div class="contact-container" id="contact">
       <h1 class="head">Contact <span class="span">Me</span></h1>
       <h2>Get IN Touch</h2>
       <div class="contacts">
@@ -220,9 +243,9 @@
           </div>
         </form>
       </div>
-    </div>
+    </div> -->
 
-    <footer>
+    <!-- <footer>
       <div class="footer-container">
         <div class="footer">
           <div class="iconn">
@@ -242,7 +265,7 @@
         </div>
         </div>
       </div>
-    </footer> 
+    </footer>  -->
     <script src="javascript/contact.js"></script>
     <script src="./javascript/displayPortfoilo.js"></script>
     <script src="./javascript/portfolio.js"></script>

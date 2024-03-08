@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="blogx">
+        <form action="your_server_endpoint" method="post" id="form" enctype="multipart/form-data">
+
+            <h1>Blogs</h1>
+            <label for="blog-title">BLOGS-TITLE</label>
+            <input type="text" name="blog-title" placeholder="enter blog title" class="field" id="blogTitle" required>
+    
+            <label for="blog-description">BLOGS-DESCRIPTION</label>
+            <input type="text" name="blog-description" placeholder="enter blog-description" class="field" id="blogDescription" required>
+    
+            <label for="imageInput">BLOGS-image</label>
+            <input type="file" name="imageInput" class="field" id="blogImage" accept="image/*" placeholder="upload blog-Image">
+    
+            <div class="btnw">
+              <button type="submit" class="btn-a" id="submitButton">POST-BLOGS</button>
+          </div>
+        </form>
+    </div>
+    <script src="./javascript/blog.js"></script>
+</body>
+</html>

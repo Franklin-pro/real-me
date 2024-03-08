@@ -4,14 +4,14 @@ login.addEventListener("submit",(e)=>{
     e.preventDefault();
 
     let email=document.querySelector("#emails").value;
-    let password=document.querySelector("#passWords").value;
+    let password=document.querySelector("#passwords").value;
 
     const userData={
         email,
         password,
     };
    
-    const api = `https://realme-backend.onrender.com/user/login`;
+    const api = `http://localhost:3000/user/login`;
     const postman = {
         method: 'POST',
         headers: {
@@ -32,11 +32,12 @@ login.addEventListener("submit",(e)=>{
               window.location.href="/admin.html";
             }
             else{
-                window.location.href="./index.html";
+                alert('login successfully')
             }
         }
         else{
             alert(data.message);
+            console.log(data)
         }
     })
         .catch(error => {
