@@ -81,13 +81,13 @@ display: none;
 
 
 #blogContainer{
-  background-color: red;
   display: flex;
   justify-content: space-evenly;
   margin: 0 auto;
   padding: 3rem;
 
   width: 60%;
+  height: 60%;
 }
 .readmore{
   display: flex;
@@ -97,23 +97,24 @@ display: none;
   width: 100%;
 
 }
-.all-description{
-background-color: blue;
+.image-read img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
+
 .all-description h1{
-  background-color: green;
+  color: orange;
   font-size: 2.4rem;
   padding: 2rem;
 }
 .all-description p{
-  background-color: green;
+  
   font-size: 2.4rem;
+  line-height: 3rem;
   padding: 2rem;
 }
-.image-read img{
-  width: 100%;
 
-}
 
 
 .home-container{

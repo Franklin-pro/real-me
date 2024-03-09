@@ -16,7 +16,7 @@ fetch(api)
               </div>
               <div class="send">
                 <p>${messagex.message}</p>
-                <button onclick="deleteBlog('${messagex._id}')">delete</button>
+                <button onclick="deleteMessage('${messagex._id}')">delete</button>
               </div>
              
              </div>
@@ -27,18 +27,26 @@ fetch(api)
 
 // -------------------delete-------------------------
 
+async function deleteMessage(id) {
+  try {
+      let req = await fetch(`https://branding-nhqf.onrender.com/contact/`+id, {
+          method: "DELETE",
+          headers: {
+              "andela": toke
+          }
+      });
 
-async function deleteBlog(id){
-  let req = await fetch(`https://branding-nhqf.onrender.com/message/`+id,{
-      method:"delete",
-      headers:{
-          "andela":toke
+      if (req.ok) {
+          let messageElement = document.getElementById(id);
+          if (messageElement) {
+              messageElement.remove();
+          }
+          console.log("Message deleted successfully.");
+      } else {
+          console.error("Failed to delete message:", req.status, req.statusText);
       }
-      
-  })
-
-  let response = await req.json()
-  console.log(response)
-  
+  } catch (error) {
+      console.error("Error deleting message:", error);
+  }
   message
 }

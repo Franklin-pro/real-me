@@ -1,4 +1,5 @@
 const table = document.getElementById('table')
+
 const tokens = window.localStorage.getItem("token");
 
 fetch(`https://branding-nhqf.onrender.com/blog`)
