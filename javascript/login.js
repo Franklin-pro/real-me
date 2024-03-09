@@ -11,7 +11,7 @@ login.addEventListener("submit",(e)=>{
         password,
     };
    
-    const api = `http://localhost:3000/user/login`;
+    const api = `https://branding-nhqf.onrender.com/user/login`;
     const postman = {
         method: 'POST',
         headers: {
@@ -28,15 +28,18 @@ login.addEventListener("submit",(e)=>{
         if(data.token){
             const token = data.token;
             localStorage.setItem("token",token);
-            if(data.data.user.role=="admin"){
-              window.location.href="/admin.html";
+            if(data.user.role=="admin"){
+                
+                alert(data.message)
+              window.location.href="/dashboard.html";
             }
             else{
+                window.location.href ="/home.html"
                 alert('login successfully')
             }
         }
         else{
-            alert(data.message);
+            alert(data.data.message);
             console.log(data)
         }
     })
