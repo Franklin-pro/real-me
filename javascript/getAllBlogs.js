@@ -1,6 +1,8 @@
 const table = document.getElementById('table')
-spinner.style.display = "none";
-table.style.display = "block";
+// const spinner = document.querySelector(".spinner");
+
+
+
 
 const tokens = window.localStorage.getItem("token");
 
@@ -11,18 +13,19 @@ fetch(`https://branding-nhqf.onrender.com/blog`)
 })
 .then((data)=>{
     data.data.map((blogx, index) => {
-        spinner.style.display = "none";
-        table.style.display = "grid";
+        // spinner.style.display = "none";
+        // table.style.display = "grid";
         table.innerHTML += `
-        
+       <table class="table" border="1">
         <tr>
         <td>${index+1}</td>
         <td>${blogx.blogTitle}</td>
-        <td>$${truncateText(blogx.blogDescription, 10)}</td>
+        <td>$${truncateText(blogx.blogDescription, 5)}</td>
         <td>${blogx.CreatedDate}</td>
         <td><a href="update.html?id=${blogx._id}"><i class="fa-solid fa-pen"></i></td></a>
         <td><i  class="fa-solid fa-trash" style="color: #FFD43B;" onclick="deleteBlog('${blogx._id}')"></i></td>
         </tr>
+        </table>
         `
     })
 })

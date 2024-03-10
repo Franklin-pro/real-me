@@ -27,6 +27,7 @@ login.addEventListener("submit",(e)=>{
     .then((data)=>{
         if(data.token){
             const token = data.token;
+            console.log(token)
             localStorage.setItem("token",token);
             if(data.user.role=="admin"){
                 

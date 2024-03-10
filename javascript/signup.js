@@ -31,8 +31,8 @@ function addUser(){
     fetch(api,postman)
         .then(response => response.json())
         .then(data => {
-            console.log(data.message)
-           alert(data.data.message);
+            console.log(data)
+           alert(data.message);
         })
         .catch(error => {
             console.error('Error:', error);
