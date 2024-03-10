@@ -1,5 +1,7 @@
 const blogs = document.getElementById('blog')
-
+const spinner = document.querySelector(".spinner");
+spinner.style.display = "none";
+blogs.style.display = "block";
 const idparam = window.location.href.split('?id=') [1]
 
     fetch(`https://branding-nhqf.onrender.com/blog/${idparam}`)
@@ -10,7 +12,7 @@ const idparam = window.location.href.split('?id=') [1]
 
 .then((data)=>{
     spinner.style.display = "none";
-        newsIndex.style.display = "grid";
+        blogs.style.display = "grid";
    blogs.innerHTML=`
 
    <div class="readmore">

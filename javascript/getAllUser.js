@@ -1,6 +1,8 @@
 const tableUser = document.getElementById('tableuser')
 const token = window.localStorage.getItem("token");
-
+const spinner = document.querySelector(".spinner");
+spinner.style.display = "none";
+blogs.style.display = "block";
 fetch(`https://branding-nhqf.onrender.com/user`,{
   headers:{
      "andela":token, 
@@ -14,7 +16,8 @@ fetch(`https://branding-nhqf.onrender.com/user`,{
 })
 .then((data)=>{
     data.data.map((user, index) => {
-    
+        spinner.style.display = "none";
+        blogs.style.display = "grid";
         tableUser.innerHTML += `
          <tr>
          <td>${index+1}</td>
