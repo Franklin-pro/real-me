@@ -73,7 +73,15 @@ function displayBlogData(blogDataArray) {
     });
 }
 
-
+function navOpen(){
+    let navlinks=document.querySelector('.links');
+    if(navlinks.className==='links'){
+      navlinks.classList+=" active"
+    }else{
+      navlinks.className='links'
+    }
+  
+  }
 
 function deleteBlog(blogId) {
     const blogDataArray = loadBlogData();
@@ -146,6 +154,8 @@ function onUpdate(blogId, blogForm) {
         blogImage
     };
 
+
+    
     updateBlog(blogId, updatedData);
 
     const submitButton = document.getElementById('submitButton');

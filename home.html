@@ -17,7 +17,7 @@
           </div>
         </div>
         
-        <ul class="links">
+        <ul class="links active">
           <li><a href="#home" class="link">Home</a></li>
           <li><a href="#about" class="link">About-Me</a></li>
           <li><a href="#work" class="link">My-Portfolio</a></li>
@@ -269,6 +269,17 @@
       </div>
     </footer> 
     <script src="javascript/postmessage.js"></script>
+    <script>
+      function navOpen(){
+    let navlinks=document.querySelector('.links');
+    if(navlinks.className==='links'){
+      navlinks.classList+=" active"
+    }else{
+      navlinks.className='links'
+    }
+  
+  }
+    </script>
   </body>
 
 </html>

@@ -779,7 +779,7 @@ font-weight: 400;
           font-family: 'Poppins', sans-serif;
           color: #ffffff;
         }
----------------------responsive-----------------------
+/* ---------------------responsive----------------------- */
 @media(max-width:1200px){
   .logo{
     font-size: 1.3rem;
