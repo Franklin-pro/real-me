@@ -32,7 +32,7 @@ async function blogData(){
             blogDescription
         };
 
-        const api = `http://localhost:3000/blog`;
+        const api = `https://branding-nhqf.onrender.com/blog`;
 
         const postman = {
             method: 'POST',
@@ -49,7 +49,7 @@ async function blogData(){
         }
 
         const data = await response.json();
-        console.log(data);
+        alert(data.message);
     } catch (error) {
         console.error('Error:', error.message);
     }

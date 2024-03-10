@@ -14,6 +14,9 @@ nav{
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.432);
   padding: 1.5rem 2rem;
   backdrop-filter: blur(20px);
+  position: sticky;
+top: 0;
+z-index: 999;
 }
 .nav-links{
   display: flex;
@@ -76,7 +79,45 @@ display: none;
   }
 }
 
+
 /* ---------end of nav----------- */
+
+
+#blogContainer{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  padding: 3rem;
+
+  width: 60%;
+  height: 60%;
+}
+.readmore{
+  display: flex;
+  gap: 3rem;
+}
+.image-read{
+  width: 100%;
+
+}
+.image-read img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.all-description h1{
+  color: orange;
+  font-size: 2.4rem;
+  padding: 2rem;
+}
+.all-description p{
+  
+  font-size: 2.4rem;
+  line-height: 3rem;
+  padding: 2rem;
+}
+
 
 
 .home-container{
@@ -467,3 +508,274 @@ font-weight: 400;
           color: #00abf0;
           font-weight: 800;
       }
+
+      /* ------------------contact----------------- */
+
+      .contact-container{
+       
+        padding: 3rem;
+      }
+      .contacts{
+        background-color: royalblue;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.274);
+        width: 100%;
+        padding: 3rem;
+      }
+      .contacts h2{
+        font-size: 3rem;
+        text-align: center;
+        font-family: "work",sans-serif;
+        color: orange;
+      
+      }
+      .fa-phone,.fa-location-dot,.fa-envelope{
+        font-size: 2rem;
+        
+      }
+      .phone{
+        display: flex;
+        align-items: center;
+        line-height: 2.3rem;
+        flex-direction: column;
+      }
+      .phone p{
+        font-size: 1.7rem;
+        color: #fcfcffa8;
+      }
+      .contacts h1{
+        font-size: 2rem;
+        text-align: center;
+        font-family: "work",sans-serif;
+        color: rgb(255, 255, 255);
+      }
+      .container{
+      
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        padding: 2rem 0;
+        gap: 3rem;
+        width: 50%;
+        align-items: center;
+      }
+      .contact-left{
+        background-color: rgb(235, 236, 236);
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.274);
+        width: 100%;
+        padding: 3rem;
+      display: flex;
+      gap: 3rem;
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
+      }
+     
+      .buton button{
+        padding: 1rem 3rem;
+        font-size: 1.8rem;
+        font-family: "work",sans-serif;
+        text-transform: uppercase;
+        border: none;
+        background-color: royalblue;
+        color: white;
+        font-weight: 400;
+        transition: all .4s;
+      }
+      .buton button:hover{
+        background-color: #fcfcff;
+        color: royalblue;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.274);
+      }
+      #contact-me{
+     
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: 100%;
+        gap: 2rem;
+      }
+      #contact-me input, textarea{
+        padding: 1rem 0;
+        border: none; 
+       
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.274);
+      }
+      
+      .iconn{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        font-size: 1.6rem;
+     
+      }
+      .iconn i{
+        background-color: rgb(3, 3, 3);
+        padding: 1rem;
+        border-radius: 50%;
+      }
+    
+      .footer{
+        background-color: black;
+        color: #ddd;
+        text-align: center;
+      }
+      .icon-end{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+      }
+      .menu{
+        font-size: 1.6rem;
+        display: none;
+        align-items: center;
+      }
+      .sub{
+        padding: 2rem;
+      }
+      input,button{
+        padding: .6rem;
+      }
+    
+      .blogs{
+        background-color: rgb(255, 255, 255);
+      }
+
+      .skill-container{
+        padding: 4rem;
+        background-color: #203036;
+        color: #eeeeee;
+        font-family: 'Roboto', sans-serif;
+        /* height: 100vh; */
+      }
+        .container{
+          width: 100%;
+          /* background-color: #ddd; */
+          /* border-radius: 5rem; */
+        }
+        .html{
+          width: 90%;
+          background-color: #154081;
+          font-size: .9rem;
+          /* border-radius: 5rem; */
+          animation: html 3s;
+        }
+        .node{
+          width: 50%;
+          background-color: #154081;
+          font-size: .9rem;
+          /* border-radius: 5rem; */
+          animation: html 3s;
+        }
+        .react{
+          width: 70%;
+          background-color: #154081;
+          font-size: .9rem;
+          /* border-radius: 5rem; */
+          animation: html 3s;
+        }
+        .css{
+          width: 80%;
+          background-color: #154081;
+          font-size: .9rem;
+          /* border-radius: 5rem; */
+          animation: css 3s;
+        }
+        .js{
+          width: 60%;
+          background-color: #154081;
+          font-size: .9rem;
+          animation: js 3s;
+          /* border-radius: 5rem; */
+        }
+        .node{
+          width: 50%;
+          background-color: #154081;
+          font-size: .9rem;
+          animation: node 3s;
+          /* border-radius: 5rem; */
+        }
+        .react{
+          width: 70%;
+          background-color: #154081;
+          font-size: .9rem;
+          animation: react 3s;
+          /* border-radius: 5rem; */
+        }
+        .php{
+          width: 40%;
+          background-color: #154081;
+          font-size: .9rem;;
+          animation: php 3s;
+          /* border-radius: 5rem; */
+        }
+      
+        @keyframes html{
+          0%{
+            width: 0%;
+          }
+          100%{
+            width: 90%;
+          }
+        }
+        @keyframes css{
+          0%{
+            width: 0%;
+          }
+          100%{
+            width: 80%;
+          }
+        }
+        @keyframes js{
+          0%{
+            width: 0%;
+          }
+          100%{
+            width: 60%;
+          }
+        }
+        @keyframes node{
+          0%{
+            width: 0%;
+          }
+          100%{
+            width: 50%;
+          }
+        }
+        @keyframes react{
+          0%{
+            width: 0%;
+          }
+          100%{
+            width: 70%;
+          }
+        }
+        @keyframes php{
+          0%{
+            width: 0%;
+          }
+          100%{
+            width: 40%;
+          }
+        }
+        .skills{
+          background-color: #203036;
+          backdrop-filter: blur(70px);
+          width: 100%;
+          box-shadow: 2px 2px 1px #0a0f1185;
+          padding: 3rem;
+         
+          display: flex;
+          flex-direction: column;
+      border-radius: 1rem;
+          justify-content: center;
+        }
+        .skill{
+          text-align: right;
+          font-family: 'Poppins', sans-serif;
+          color: aliceblue;
+        }
+        .skills h1{
+          font-family: 'Poppins', sans-serif;
+          color: #ffffff;
+        }

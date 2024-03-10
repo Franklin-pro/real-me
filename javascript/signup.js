@@ -6,19 +6,19 @@ signup.addEventListener("submit", (e)=>{
 })
 
 function addUser(){
-    let userName = document.getElementById('userName').value;
+    let username = document.getElementById('username').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     let confPassword = document.getElementById('confirmPassword').value;
 
     const userData = {
-        userName,
+        username,
         email,
         password,
         confPassword
     }
-console.log(userData)
-    const api = `http://localhost:3000/user`;
+
+    const api = `https://branding-nhqf.onrender.com/user`;
 
     const postman = {
         method: 'POST',
@@ -31,11 +31,10 @@ console.log(userData)
     fetch(api,postman)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
-           alert(data.message);
+            console.log(data.message)
+           alert(data.data.message);
         })
         .catch(error => {
             console.error('Error:', error);
         });
 }
-

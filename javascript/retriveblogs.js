@@ -1,7 +1,7 @@
 const blogs = document.getElementById('blog')
 
 
-    fetch(`http://localhost:3000/blog`)
+    fetch(`https://branding-nhqf.onrender.com/blog`)
 
 .then((response)=>{
     return response.json()
@@ -9,7 +9,6 @@ const blogs = document.getElementById('blog')
 
 .then((data)=>{
     data.data.map((blogx)=>{
-        console.log(blogx)
     blogs.innerHTML+= `
     <div class="blog-card">
     <div class="blog-image">
@@ -17,7 +16,7 @@ const blogs = document.getElementById('blog')
               </div>
               <div class="blog-text">
                 <h1>${blogx.blogTitle}</h1>
-                <p>${blogx.blogDescription}</p>
+                <p>$${truncateText(blogx.blogDescription, 10)}</p>
                 <div class="icons">
                   <span><i class="fa-regular fa-thumbs-up"></i>100</span>
                   <span><i class="fa-regular fa-thumbs-down"></i>0</span>
@@ -36,5 +35,8 @@ const blogs = document.getElementById('blog')
 
 })
 
-
-
+function truncateText(text, maxLength) {
+  const words = text.split(' ');
+  const truncatedWords = words.slice(0, maxLength);
+  return truncatedWords.join(' ') + (words.length > maxLength ? '...' : '');
+}
