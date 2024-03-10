@@ -27,7 +27,7 @@ login.addEventListener("submit",(e)=>{
     .then((data)=>{
         if(data.token){
             const token = data.token;
-            console.log(token)
+            
             localStorage.setItem("token",token);
             if(data.user.role=="admin"){
                 
@@ -40,7 +40,7 @@ login.addEventListener("submit",(e)=>{
             }
         }
         else{
-            alert(data.data.message);
+            // alert(data.data.message);
             console.log(data)
         }
     })

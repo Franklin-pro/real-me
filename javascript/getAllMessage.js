@@ -1,7 +1,6 @@
 const message = document.getElementById('messages')
 const toke = window.localStorage.getItem("token");
-// spinner.style.display = "none";
-// message.style.display = "block";
+
 const api = `https://branding-nhqf.onrender.com/contact`
 
 fetch(api)
@@ -9,8 +8,6 @@ fetch(api)
     return response.json()
 }).then(data=>{
    data.data.map((messagex)=>{
-//     spinner.style.display = "none";
-// table.style.display = "grid";
    message.innerHTML +=`
    <div class="message" id="message">
               <div class="titles">

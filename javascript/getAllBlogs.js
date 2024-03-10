@@ -17,6 +17,7 @@ fetch(`https://branding-nhqf.onrender.com/blog`)
         // table.style.display = "grid";
         table.innerHTML += `
        <table class="table" border="1">
+       
         <tr>
         <td>${index+1}</td>
         <td>${blogx.blogTitle}</td>
