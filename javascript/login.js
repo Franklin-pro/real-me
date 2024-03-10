@@ -39,7 +39,7 @@ login.addEventListener("submit",(e)=>{
             }
         }
         else{
-            alert(data.message);
+            alert(data.data.message);
             console.log(data)
         }
     })

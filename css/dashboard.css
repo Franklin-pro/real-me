@@ -218,6 +218,38 @@ h1{
     justify-content: center;
 padding: 3rem;
 }
+.message{
+    display: flex; 
+  
+    width: 100%;
+    padding: 2rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.titles{
+    font-size: 1.5rem;
+    display: flex;
+    gap: 3rem;
+    font-family: "work",sans-serif;
+    padding: 1rem 0;
+    letter-spacing: .1rem;
+}
+.send p{
+    font-size: 2rem;
+    font-family: "work",sans-serif;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+.send button{
+    padding: 1rem 3rem;
+    border: none;
+    font-size: 1.5rem;
+    transition: all .3s;
+}
+.send button:hover{
+    background-color: royalblue;
+    color: #fff;
+}
 .display{
     background-color: rgb(255, 255, 255);
     border-radius: .5rem;
