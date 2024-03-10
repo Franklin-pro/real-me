@@ -1,4 +1,8 @@
 const table = document.getElementById('table')
+const spinner = document.querySelector(".spinner");
+
+
+
 
 const tokens = window.localStorage.getItem("token");
 
@@ -9,8 +13,10 @@ fetch(`https://branding-nhqf.onrender.com/blog`)
 })
 .then((data)=>{
     data.data.map((blogx, index) => {
+        spinner.style.display = "none";
+        table.style.display = "grid";
         table.innerHTML += `
-        
+       
         <tr>
         <td>${index+1}</td>
         <td>${blogx.blogTitle}</td>

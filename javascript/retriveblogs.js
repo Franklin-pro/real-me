@@ -1,5 +1,8 @@
 const blogs = document.getElementById('blog')
+const spinner = document.querySelector(".spinner");
 
+spinner.style.display = "block";
+blogs.style.display = "none";
 
     fetch(`https://branding-nhqf.onrender.com/blog`)
 
@@ -9,6 +12,8 @@ const blogs = document.getElementById('blog')
 
 .then((data)=>{
     data.data.map((blogx)=>{
+      spinner.style.display = "none";
+      blogs.style.display = "grid";
     blogs.innerHTML+= `
     <div class="blog-card">
     <div class="blog-image">

@@ -9,6 +9,8 @@ const idparam = window.location.href.split('?id=') [1]
 })
 
 .then((data)=>{
+    spinner.style.display = "none";
+        newsIndex.style.display = "grid";
    blogs.innerHTML=`
 
    <div class="readmore">
