@@ -9,11 +9,8 @@ function messageData() {
     let fullName = document.getElementById('fullName').value;
     let email = document.getElementById('email').value;
     let message = document.getElementById('message').value;
-
-
     const messages = {
         fullName,
-       
         email,
         message
     }

@@ -1,143 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>admin</title>
-    <link rel="stylesheet" href="./css/dashboard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 <body>
-   <div class="dashboard-container">
-    <div class="dashboard">
-        
-        <div class="dashboard-left">
-        <h1 class="heads">FRANKLIN-PRO</h1>
-        <div class="title">
-            <a href="#" class="inside" onclick="dashboard()"><i class="fa-solid fa-gauge"></i>DASHBOARD</a>
-            <a href="#" class="inside"><i class="fa-solid fa-users"></i>USER</a>
-            <a href="#" class="inside"><i onclick="port()" class="fa-solid fa-newspaper"></i>PORTFOLIO</a>
-            <a href="#" class="inside" onclick="blog()"><i class="fa-solid fa-blog"></i>BLOGS</a>
-            <a href="#" class="inside"><i class="fa-solid fa-thumbs-down"></i>DISLIKES</a>
-            <a href="#" class="inside"><i class="fa-solid fa-thumbs-up"></i>LIKES</a>
-            <a href="#" class="inside"><i class="fa-solid fa-comment"></i>COMMENTS</a>
-            <a href="#" class="inside" onclick="messages()"><i class="fa-regular fa-message"></i>MESSAGES</a>
-            <a href="#" class="inside"><i class="fa-solid fa-gear"></i>SETTINGS</a>
-        
-        </div>
-        <div class="button">
-            <a href="#" class="inside"><i class="fa-solid fa-arrow-right-from-bracket"></i>LOGOUT</a>
-        </div>
-        </div>
-        <div class="dashboard-right" id="dash">
-            <nav class="yuu">
-             <div class="profile">
-                <img src="./images/cee.jpg" alt="">
-             </div>
-             <div class="icons">
-                <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
-                <i class="fa-brands fa-github" style="color: #ffffff;"></i>
-             </div>
-            </nav>
-
-           <div class="blog-posts">
-            <div class="blogx">
-              <form action="your_server_endpoint" id="form" enctype="multipart/form-data" name="updateform">
-
-                  <h1>Blogs</h1>
-                  <input type="hidden" name="id">
-                  <label for="blog-title">BLOGS-TITLE</label>
-                  <input type="text" name="title" placeholder="enter blog title" class="field" id="blogTitle" required>
-          
-                  <label for="blog-description">BLOGS-DESCRIPTION</label>
-                  <input type="text" name="description" placeholder="enter blog-description" class="field" id="blogDescription" required>
-          
-                  <label for="imageInput">BLOGS-image</label>
-                  <input type="file" name="photo" class="field" id="blogImage" accept="image/*" placeholder="Upload blog image">
-<span id="fileInfo"></span>
-          
-                  <div class="btnw">
-                    <button type="submit" class="btn-a" id="submitButton">UPDATE-BLOGS</button>
-                </div>
-              </form>
-          </div>
-          
-            </div> 
-
-            <div class="display-message" id="messages">
-              <div class="message" id="message">
-             
-             
-             </div> 
+    <div class="dashboard-container">
+        <div class="dashboard">
+            <div class="dashboard-left">
+                <!-- Left sidebar content -->
             </div>
+            <div class="dashboard-right" id="dash">
+                <div class="blog-posts">
+                    <div class="blogx">
+                        <form action="#" id="form" enctype="multipart/form-data" name="updateform">
 
-
-
-          
-                
-
-           
+                            <h1>Blogs</h1>
+                            <input type="hidden" name="id" />
+                            <label for="blog-title">BLOGS-TITLE</label>
+                            <input type="text" name="title" placeholder="enter blog title" class="field" id="blogTitle" required />
+                            <label for="blog-description">BLOGS-DESCRIPTION</label>
+                            <input type="text" name="description" placeholder="enter blog-description" class="field" id="blogDescription" required />
+                            <label for="imageInput">BLOGS-image</label>
+                            <input type="file" name="photo" class="field" id="blogImage" accept="image/*" placeholder="Upload blog image" />
+                            <span id="fileInfo"></span>
+                            <div class="btnw">
+                                <button type="submit" class="btn-a" id="submitButton">UPDATE-BLOGS</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="display-message" id="messages">
+                    <div class="message" id="message"></div>
+                </div>
+            </div>
         </div>
     </div>
-   </div>
 
-   <script>
-async function getSingleBlog() {
+    <script>
+       window.addEventListener("DOMContentLoaded", async () => {
     try {
-        let link = window.location.href;
-        let url = new URL(link);
-        let id = url.searchParams.get('id');
-        console.log(id);
-        let req = await fetch("http://localhost:3002/blog/" + id);
-        let res = await req.json();
-        console.log(res);
-        if (res.data) {
-            updateform.id.value = id;
-            updateform.description.value = res.data.blogDescription;
-            updateform.title.value = res.data.blogTitle;
+        const id = new URLSearchParams(window.location.search).get("id");
+        const response = await fetch(`https://branding-nhqf.onrender.com/blog/` + id);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch data: ${response.status}`);
+        }
+        const data = await response.json();
+        document.querySelector('input[name="id"]').value = data.data._id;
+        document.getElementById("blogTitle").value = data.data.blogTitle;
+        document.getElementById("blogDescription").value = data.data.blogDescription;
+        document.getElementById("blogImage").src = data.blogImage;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+});
+
+window.addEventListener("DOMContentLoaded", async () => {
+    try {
+        const id = new URLSearchParams(window.location.search).get("id");
+        const response = await fetch(`https://branding-nhqf.onrender.com/blog/` + id);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch data: ${response.status}`);
+        }
+        const data = await response.json();
+        document.querySelector('input[name="id"]').value = data.data._id;
+        document.getElementById("blogTitle").value = data.data.blogTitle;
+        document.getElementById("blogDescription").value = data.data.blogDescription;
+        document.getElementById("blogImage").src = data.blogImage;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+});
+
+async function updateBlogPost(event) {
+    const tokenz = window.localStorage.getItem("token");
+    event.preventDefault(); 
+    const form = event.target;
+    const formData = new FormData(form); 
+
+    try {
+        const id = formData.get('id'); 
+       
+        const response = await fetch(`https://branding-nhqf.onrender.com/blog/${id}`, {
+            method: 'PUT', 
+            "andela":tokenz, 
+            body: formData
             
-            // Display filename separately
-            let fileInfoSpan = document.getElementById("fileInfo");
-            fileInfoSpan.textContent = res.data.blogImage; // Assuming blogImage contains the filename
+        });
+
+        if (response.ok) {
+            alert("Blog post updated successfully");
+        } else {
+            alert("Failed to update blog post");
         }
     } catch (error) {
-        console.error('Error fetching blog:', error);
-        // Handle error (e.g., show error message to user)
+        console.error('Error:', error);
+        alert("An error occurred while updating the blog post");
     }
 }
-    getSingleBlog();
 
-    async function update() {
-        try {
-            const tokenx = window.localStorage.getItem("token");
-            let data = {
-                "blogTitle": updateform.title.value,
-                "blogDescription": updateform.description.value,
-                "blogImage": updateform.photo.value
-            }
-            id = updateform.id.value
-            console.log(JSON.stringify(data));
-            let req = await fetch("http://localhost:3002/blog/"+id, {
-                method: 'PUT',
-                headers: {
-                    "Content-Type": "application/json",
-                    "andela": tokenx
-                },
-                body: JSON.stringify(data)
-            });
-            let res = await req.json();
-            if (res.data) {
-                window.location = "dashboard.html";
-            } else {
-                console.error('Update failed:', res.error);
-                // Handle update failure (e.g., show error message to user)
-            }
-        } catch (error) {
-            console.error('Error updating blog:', error);
-            // Handle error (e.g., show error message to user)
-        }
-    }
-</script>
+const form = document.getElementById("form");
+form.addEventListener("submit", updateBlogPost);
 
+    </script>
 </body>
 </html>
